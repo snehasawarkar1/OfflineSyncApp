@@ -1,0 +1,31 @@
+<ion-view view-title="Simple Application Page 1">
+  <ion-content class="padding">
+    <div class="login-box">
+    <form>
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" type="submit" ng-click="goToList()">Login</button>
+          <!--<button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>-->
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+  </ion-content>
+</ion-view> 
