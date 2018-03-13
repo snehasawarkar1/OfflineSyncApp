@@ -1,5 +1,30 @@
 <ion-view view-title="Details">
   <ion-content class="padding">
-    <h3>details</h3>
-  </ion-content>
+    <div class="row detail">
+        <h4 class="col-xs-8 greenText">{{lead.name}}</h4>
+        <div class="col-xs-4 editImg">
+          <img src="img/edit.png"/>
+        </div>
+    </div>    
+    <div class="row detail">
+        <div class="col-xs-4"> <b> Email : </b> </div>
+        <div class="col-xs-8"> {{lead.email_address}} </div>
+    </div>
+    <div class="row detail">
+        <div class="col-xs-4"> <b> Contact : </b> </div>
+        <div class="col-xs-8"> {{lead.contact_no}} </div>
+    </div>
+      <div class="row detail">
+        <div class="col-xs-4"> <b> Address : </b> </div>
+        <div class="col-xs-8"> {{lead.address}} </div>
+    </div>
+      <div class="row detail">
+        <div class="col-xs-4"> <b> Products interested in : </b> </div>
+        <div class="col-xs-8"> {{lead.products_interested_in}} </div>
+    </div>
+      <div class="row detail">
+        <div class="col-xs-4"> <b> Notes : </b> </div>
+        <div class="col-xs-8"> {{lead.additional_notes}} </div>
+    </div>
+   </ion-content>
 </ion-view> 

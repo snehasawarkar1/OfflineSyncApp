@@ -1,9 +1,14 @@
 <ion-view view-title="List">
   <ion-content class="padding">
-    <h3>Leads</h3>
+    <h3 class="greenText">Leads</h3>
     <ion-list>
-        <ion-item ng-click="openDetails()" ng-repeat="lead in leadsList">
-            <div> {{lead.name}} </div>
+        <ion-item ng-repeat="lead in leadsList" ng-click="openDetails(lead)">
+            <div class="row">
+                <div class="col-xs-10">{{lead.name}}</div>
+                <div class="col-xs-2">
+                    <img class="pull-right" src="img/edit.png"/>
+                </div>
+            </div>
             <div> 
                 <span class="label"> Email: </span> 
                 <span> {{lead.email_address}} </span>

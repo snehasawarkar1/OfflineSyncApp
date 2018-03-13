@@ -1,4 +1,6 @@
-OfflineSyncApp.controller('detailsController', ['$scope', '$state', function($scope, $state)
+OfflineSyncApp.controller('detailsController', ['$scope', '$state', 'StorageService', function($scope, $state, StorageService)
 {
-    console.log("in details");;
+    $scope.lead = JSON.parse(StorageService.getItem('selectedLead'));
+    console.log($scope.lead);
+    
 }]);

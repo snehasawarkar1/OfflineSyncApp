@@ -1,13 +1,73 @@
 /* Empty. Add your own CSS if you like */
 .bar.bar-stable {
-    background-color: #4EA24E
+    background-color: #4EA24E;
 }
 
 .bar.bar-stable .title {
     color : #fff;
 }
 
+.greenText {
+    color: #4EA24E;
+}
+
+.txt-error
+{
+    color: red;
+}
+
 .item .label
 {
     color : #000;
 }
+
+
+body {
+	background: #eee !important;	
+}
+
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);  
+}
+  .form-signin-heading {
+      margin-bottom: 30px;
+        color : #4EA24E;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+      padding: 10px;
+    }
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+
+	.detail{
+		margin: 10px 0px;
+	}
+
+	.editImg
+	{
+		text-align: right;
+    margin-top: 5px;
+	}

@@ -1,4 +1,4 @@
-OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', function($scope, $state, LeadsService)
+OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', 'StorageService', function($scope, $state, LeadsService, StorageService)
 {
     $scope.leadsList = [];
     var response = LeadsService.getLeadsList();
@@ -10,8 +10,9 @@ OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', 
     {
         console.log("error");
     });
-    $scope.openDetails = function()
+    $scope.openDetails = function(selectedLead)
     {
+        StorageService.setItem('selectedLead',selectedLead);
         $state.go('details');
     }
 }]);
