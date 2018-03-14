@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 var OfflineSyncApp = angular.module('offlineSyncApp', ['ionic'])
 
-OfflineSyncApp.run(function($ionicPlatform) {
+OfflineSyncApp.run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,4 +21,18 @@ OfflineSyncApp.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
+
+  $rootScope.showSettingOption = false;
+
+  $rootScope.toggleSettingOption = function()
+  {
+    $rootScope.showSettingOption = !$rootScope.showSettingOption;
+  }
+
+$rootScope.logout = function ()
+{
+  $rootScope.toggleSettingOption();
+  $state.go('login');
+}
+
 })

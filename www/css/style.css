@@ -38,6 +38,11 @@ body {
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);  
 }
+
+	.form-group .form-control{
+		font-size: 13px !important;
+	}
+
   .form-signin-heading {
       margin-bottom: 30px;
         color : #4EA24E;
@@ -45,10 +50,9 @@ body {
 
 	.form-control {
 	  position: relative;
-	  font-size: 16px;
 	  height: auto;
-      padding: 10px;
-    }
+		padding: 10px;
+  }
 
 	input[type="text"] {
 	  margin-bottom: 10px;
@@ -70,4 +74,27 @@ body {
 	{
 		text-align: right;
     margin-top: 5px;
+	}
+
+	.settingBtn
+	{
+		background-repeat: no-repeat;
+    width: 40px;
+    margin-right: 10px;
+    margin-top: -5px;
+	}
+
+	.settingOption
+	{
+		float:right;
+		margin-top:30px;
+		position: absolute;
+    top: 10%;
+    right: 40%;
+	}
+
+	.item
+	{
+		padding: 8px;
+		color : #696969;
 	}

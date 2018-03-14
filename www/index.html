@@ -43,9 +43,23 @@
   </head>
   <body ng-app="offlineSyncApp">
     <ion-pane>
-      <ion-header-bar class="bar-stable">
+      <ion-nav-bar class="bar-stable">
         <h1 class="title">ABC</h1>
-      </ion-header-bar>
+        <ion-nav-buttons side="right">
+          <button class="button button-clear button-positive settingBtn" style="background-image: url('../img/37.png')" ng-click="toggleSettingOption()">
+          </button>
+          <div class="settingOption" ng-show="showSettingOption">
+            <ion-list>
+              <ion-item>
+                Profile
+              </ion-item>
+              <ion-item ng-click="logout()">
+                Logout
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-nav-buttons>
+      </ion-nav-bar>
       <ion-content>
         <ion-nav-view></ion-nav-view>
       </ion-content>
