@@ -1,12 +1,15 @@
 <ion-view view-title="List">
   <ion-content class="padding">
-    <h3 class="greenText">Leads</h3>
-    <ion-list>
+    <div class="row">
+        <h3 class="greenText col-xs-9">Leads</h3>
+        <button class="btn btn-success btn-sm col-xs-3" ng-click="createNew()">Add New</button>
+    </div>
+    <ion-list style="clear:both">
         <ion-item ng-repeat="lead in leadsList" ng-click="openDetails(lead)">
             <div class="row">
                 <div class="col-xs-10">{{lead.name}}</div>
                 <div class="col-xs-2">
-                    <img class="pull-right" src="img/edit.png"/>
+                    <img class="pull-right" ng-click="editLead(lead); $event.stopPropagation();" src="img/edit.png"/>
                 </div>
             </div>
             <div> 

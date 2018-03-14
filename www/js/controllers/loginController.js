@@ -4,14 +4,14 @@ OfflineSyncApp.controller('loginController', ['$scope', '$state', function($scop
     $scope.password = "";
     $scope.goToList = function()
     {
-        //$state.go('list');
-        if($scope.username == "tempUser" && $scope.password == "test")
+        $state.go('list');
+        /*if($scope.username == "tempUser" && $scope.password == "test")
         {
             $state.go('list');
         }
         else
         {
             $scope.error = true;
-        }
+        }*/
     }
 }]);

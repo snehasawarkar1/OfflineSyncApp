@@ -14,6 +14,11 @@ OfflineSyncApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/details',
             templateUrl: 'views/details.html',
             controller: 'detailsController'
+        })
+        .state('leadForm', {
+            url: '/leadForm/{leadData:json}',
+            templateUrl: 'views/leadForm.html',
+            controller: 'leadFormController'
         });
     $urlRouterProvider.otherwise('/login');
 });

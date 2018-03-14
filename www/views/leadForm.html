@@ -1,0 +1,43 @@
+<ion-view view-title="Create">
+  <ion-content class="padding">
+    <form>
+      <div class="form-group row">
+        <label class="control-label col-xs-4" for="name">Name :</label>
+        <div class="col-xs-8">
+          <input type="name" class="form-control" ng-model="lead.name" id="name" placeholder="Enter name" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-xs-4" for="email">Email :</label>
+        <div class="col-xs-8">
+          <input type="name" class="form-control" ng-model="lead.email_address" id="email" placeholder="Enter Email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-sm-2 col-xs-4" for="contact">Contact Number :</label>
+        <div class="col-sm-10 col-xs-8">
+          <input type="name" class="form-control" ng-model="lead.contact_no" id="contact" placeholder="Enter Contact Number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-sm-2 col-xs-4" for="address">Address :</label>
+        <div class="col-sm-10 col-xs-8">
+          <input type="name" class="form-control" ng-model="lead.address" id="address" placeholder="Enter Address">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-sm-2 col-xs-4" for="interest">Interested In :</label>
+        <div class="col-sm-10 col-xs-8">
+          <input type="name" class="form-control" ng-model="lead.products_interested_in" id="interest" placeholder="Enter products interested in">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label col-sm-2 col-xs-4" for="note">Additional Notes :</label>
+        <div class="col-sm-10 col-xs-8">
+          <textarea class="form-control" rows="5" ng-model="lead.additional_notes" id="note" placeholder="Additional notes"></textarea>
+        </div>
+      </div>
+        <center><button type="submit" class="btn btn-success btn-lg" ng-disabled="lead==undefined" ng-click="submitForm()">{{btnName}}</button></center>
+    </form>
+  </ion-content>
+</ion-view>

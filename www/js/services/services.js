@@ -7,6 +7,26 @@ OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
                 method: 'GET'
             };
            return $http(req);
+        },
+
+        editLead: function (lead) {
+            var req = {
+                url : baseUrl + 'leads/' + lead.id + '.json',
+                method : 'PUT',
+                data : lead
+            };
+            return $http(req);
+        },
+
+        submitLead: function (lead,action) {
+            var req = {
+                url : baseUrl + 'leads.json',
+                method : action,
+                data : lead
+            };
+            return $http(req);
         }
+
+
     }
 }]);
