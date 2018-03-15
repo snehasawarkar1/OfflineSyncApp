@@ -12,32 +12,35 @@ OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsServi
         $scope.btnName = "Add";
     }
     
-    $scope.submitForm = function()
+    $scope.submitForm = function(valid)
     {
-        if(action == "edit")
+        if(valid)
         {
-            var p = LeadsService.editLead($scope.lead);
-            p.then(function(response)
+            if(action == "edit")
             {
-                $state.go('list');
-            },
-            function(error)
-            {
+                var p = LeadsService.editLead($scope.lead);
+                p.then(function(response)
+                {
+                    $state.go('list');
+                },
+                function(error)
+                {
 
-            });
-        }
-        else
-        {
-            var p = LeadsService.createLead($scope.lead);
-            p.then(function(response)
+                });
+            }
+            else
             {
-                $state.go('list');
-            },
-            function(error)
-            {
+                var p = LeadsService.createLead($scope.lead);
+                p.then(function(response)
+                {
+                    $state.go('list');
+                },
+                function(error)
+                {
 
-            });
-        }
+                });
+            }
+        }       
         
     }
 

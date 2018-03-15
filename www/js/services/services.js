@@ -18,7 +18,7 @@ OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
             return $http(req);
         },
 
-        submitLead: function (lead,action) {
+        createLead: function (lead,action) {
             var req = {
                 url : baseUrl + 'leads.json',
                 method : action,
