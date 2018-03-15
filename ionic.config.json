@@ -1,6 +1,12 @@
 {
   "name": "offlineSyncApp",
   "app_id": "",
+  "proxies": [
+    {
+      "path": "/v1",
+      "proxyUrl": "https://fierce-waters-45153.herokuapp.com"
+    }
+  ],
   "type": "ionic1",
   "integrations": {
     "gulp": {},
