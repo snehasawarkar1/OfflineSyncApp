@@ -1,9 +1,9 @@
 OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
-	var baseUrl = "https://fierce-waters-45153.herokuapp.com/";
+	var baseUrl = "/v1/";
     return {
         getLeadsList: function () {
-            var req = {                
-				url : baseUrl + 'leads.json',
+            var req = {
+                url : baseUrl + 'leads.json',
                 method: 'GET'
             };
            return $http(req);
@@ -18,7 +18,7 @@ OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
             return $http(req);
         },
 
-        createLead: function (lead,action) {
+        createLead: function (lead, action) {
             var req = {
                 url : baseUrl + 'leads.json',
                 method : action,
@@ -26,7 +26,5 @@ OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
             };
             return $http(req);
         }
-
-
     }
 }]);
