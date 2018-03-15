@@ -5,7 +5,7 @@ OfflineSyncApp.controller('loginController', ['$scope', '$state', function($scop
         //$state.go('list');
         if(valid)
         {
-            if((user.username == 'tempUser') && (user.password === 'test'))
+            if((user.username == 'tempUser') && (user.password == 'test'))
             {
                 $state.go('list');
             }
