@@ -40,8 +40,7 @@ OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsServi
 
                 });
             }
-        }       
-        
+        }
     }
 
 }]);

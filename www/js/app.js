@@ -29,10 +29,19 @@ OfflineSyncApp.run(function($ionicPlatform, $rootScope, $state) {
     $rootScope.showSettingOption = !$rootScope.showSettingOption;
   }
 
-$rootScope.logout = function ()
-{
-  $rootScope.toggleSettingOption();
-  $state.go('login');
-}
+  $rootScope.logout = function ()
+  {
+    $rootScope.toggleSettingOption();
+    $state.go('login');
+  }
 
-})
+  window.onclick = function() 
+  {
+      if ($rootScope.showSettingOption) 
+      {
+        $rootScope.showSettingOption = false;
+        $rootScope.$apply();
+      }
+  }  
+
+});

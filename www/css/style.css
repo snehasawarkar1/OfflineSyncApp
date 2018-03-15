@@ -55,7 +55,6 @@ body {
   }
 
 	input[type="text"] {
-	  margin-bottom: 10px;
 	  border-bottom-left-radius: 0;
 	  border-bottom-right-radius: 0;
 	}
@@ -97,4 +96,10 @@ body {
 	{
 		padding: 8px;
 		color : #696969;
+	}
+
+	.error
+	{
+		color : red;
+		font-size : 12px;
 	}
