@@ -18,10 +18,10 @@ OfflineSyncApp.service('LeadsService', ['$http', '$q', function ($http, $q) {
             return $http(req);
         },
 
-        createLead: function (lead, action) {
+        createLead: function (lead) {
             var req = {
                 url : baseUrl + 'leads.json',
-                method : action,
+                method : 'POST',
                 data : lead
             };
             return $http(req);

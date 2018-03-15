@@ -12,7 +12,7 @@ OfflineSyncApp.controller('loginController', ['$scope', '$state', function($scop
             else
             {
                 $scope.error = true;
-            }   
+            }
         }
     }
 }]);

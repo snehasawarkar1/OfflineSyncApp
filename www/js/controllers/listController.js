@@ -1,24 +1,27 @@
 OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', 'StorageService', function($scope, $state, LeadsService, StorageService)
 {
     $scope.leadsList = [];
-    var response = LeadsService.getLeadsList();
-    response.then(function(data){
-       $scope.leadsList = data.data;
-    },
-    function(error)
-    {
-        console.log("error");
-    });
+
+    function init() {
+        var response = LeadsService.getLeadsList();
+        response.then(function(data){
+           $scope.leadsList = data.data;
+        },
+        function(error)
+        {
+            console.log("error");
+        });
+    }
 
     $scope.openDetails = function(selectedLead)
     {
         StorageService.setItem('selectedLead',selectedLead);
-        $state.go('details');
+        $state.go('app.details');
     }
 
     $scope.createNew = function()
     {
-        $state.go("leadForm", {leadData: {action : "new"}});
+        $state.go("app.leadForm", {leadData: {action : "new"}});
     }
 
     $scope.editLead = function(lead)
@@ -27,7 +30,13 @@ OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', 
             lead : lead,
             action : 'edit'
         }
-        $state.go("leadForm", {leadData: data});
+        $state.go("app.leadForm", {leadData: data});
     }
+
+    $scope.$on("$ionicView.enter", function(scopes, states) {
+        if(states.stateName == "app.list") {
+            init()
+        }
+    });
 
 }]);
