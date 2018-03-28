@@ -13,19 +13,16 @@ OfflineSyncApp.controller('listController', ['$scope', '$state','LeadsService', 
         });
     }
 
-    $scope.openDetails = function(selectedLead)
-    {
-        StorageService.setItem('selectedLead',selectedLead);
+    $scope.openDetails = function(selectedLead) {
+        StorageService.setItem('selectedLead', selectedLead);
         $state.go('app.details');
     }
 
-    $scope.createNew = function()
-    {
+    $scope.createNew = function() {
         $state.go("app.leadForm", {leadData: {action : "new"}});
     }
 
-    $scope.editLead = function(lead)
-    {
+    $scope.editLead = function(lead) {
         var data = {
             lead : lead,
             action : 'edit'
