@@ -1,24 +1,53 @@
 OfflineSyncApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('login', {
-            url: '/login',
-            templateUrl: 'views/login.html',
-            controller: 'loginController'
+
+        // .state('login', {
+        //     url: '/login',
+        //     templateUrl: 'views/login.html',
+        //     controller: 'loginController'
+        // })
+        .state('app', {
+          url: '/app',
+          abstract: true,
+          templateUrl: 'views/menu.html',
+          controller: 'AppCtrl'
         })
-        .state('list', {
+        .state('app.list', {
             url: '/list',
-            templateUrl: 'views/list.html',
-            controller: 'listController'
+            views: {
+              'menuContent': {
+                templateUrl: 'views/list.html',
+                controller: 'listController'
+              }
+            }
         })
-        .state('details', {
+        .state('app.details', {
             url: '/details',
-            templateUrl: 'views/details.html',
-            controller: 'detailsController'
+            views: {
+              'menuContent': {
+                templateUrl: 'views/details.html',
+                controller: 'detailsController'
+              }
+            }
         })
-        .state('leadForm', {
+        .state('app.leadForm', {
             url: '/leadForm/{leadData:json}',
-            templateUrl: 'views/leadForm.html',
-            controller: 'leadFormController'
+            views: {
+              'menuContent': {
+                templateUrl: 'views/leadForm.html',
+                controller: 'leadFormController'
+              }
+            }
         });
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/app/list');
 });
+
+
+
+
+OfflineSyncApp.controller('AppCtrl', [
+  '$scope',
+  function($scope) {
+
+  }
+]);

@@ -1,4 +1,4 @@
-<ion-view view-title="List">
+<ion-view view-title="List" cache-view="false">
   <ion-content class="padding">
     <div class="row">
         <h3 class="greenText col-xs-9">Leads</h3>
@@ -8,16 +8,16 @@
         <ion-item ng-repeat="lead in leadsList" ng-click="openDetails(lead)">
             <div class="row">
                 <div class="col-xs-10">{{lead.name}}</div>
-                <div class="col-xs-2">
+                <div class="col-xs">
                     <img class="pull-right" ng-click="editLead(lead); $event.stopPropagation();" src="img/edit.png"/>
                 </div>
             </div>
-            <div> 
-                <span class="label"> Email: </span> 
+            <div>
+                <span class="label"> Email: </span>
                 <span> {{lead.email_address}} </span>
             </div>
-            <div> 
-                <span class="label"> Contact Number: </span> 
+            <div>
+                <span class="label"> Contact Number: </span>
                 <span> {{lead.contact_no}} </span>
             </div>
         </ion-item>

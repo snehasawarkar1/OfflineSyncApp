@@ -1,4 +1,4 @@
-OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsService', function($scope, $state, LeadsService)
+OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsService', 'StorageService', function($scope, $state, LeadsService, StorageService)
 {
     var action = $state.params.leadData.action;
     if(action == "edit")
@@ -8,20 +8,21 @@ OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsServi
     }
     else
     {
-        //$scope.lead = {};
+        $scope.lead = {};
         $scope.btnName = "Add";
     }
-    
-    $scope.submitForm = function(valid)
-    {
+
+    $scope.submitForm = function(valid) {
         if(valid)
         {
+
             if(action == "edit")
             {
                 var p = LeadsService.editLead($scope.lead);
                 p.then(function(response)
                 {
-                    $state.go('list');
+                    // openDetails($scope.lead)
+                    $state.go('app.list');
                 },
                 function(error)
                 {
@@ -33,7 +34,8 @@ OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsServi
                 var p = LeadsService.createLead($scope.lead);
                 p.then(function(response)
                 {
-                    $state.go('list');
+                    // openDetails($scope.lead)
+                    $state.go('app.list');
                 },
                 function(error)
                 {
@@ -41,6 +43,11 @@ OfflineSyncApp.controller('leadFormController', ['$scope', '$state', 'LeadsServi
                 });
             }
         }
+    }
+
+    function openDetails(selectedLead) {
+        StorageService.setItem('selectedLead', selectedLead);
+        $state.go('app.details');
     }
 
 }]);
