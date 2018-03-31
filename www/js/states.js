@@ -1,11 +1,11 @@
 OfflineSyncApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-        // .state('login', {
-        //     url: '/login',
-        //     templateUrl: 'views/login.html',
-        //     controller: 'loginController'
-        // })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/login.html',
+          controller: 'loginController'
+        })
         .state('app', {
           url: '/app',
           abstract: true,
@@ -39,7 +39,7 @@ OfflineSyncApp.config(function($stateProvider, $urlRouterProvider) {
               }
             }
         });
-    $urlRouterProvider.otherwise('/app/list');
+    $urlRouterProvider.otherwise('/login');
 });
 
 

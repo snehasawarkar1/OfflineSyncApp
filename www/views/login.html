@@ -1,13 +1,14 @@
-<ion-view view-title="Login">
+<ion-view view-title="Login" name="login-view">
   <ion-content class="padding">
-  <div class="wrapper">
-    <form class="form-signin" name="loginForm" ng-submit="goToList(loginForm.$valid, user)" novalidate>
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" ng-model="user.username" required>
-      <input type="password" class="form-control" name="password" placeholder="Password" ng-model="user.password" required>
-      <button type="submit" class="btn btn-success">Login</button>
-      <div class="txt-error" ng-if="error">Invalid username or password.</div>
-    </form>
-  </div>
+      <div class="list list-inset loginDiv">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="user.username" required>
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="user.password" required>
+          </label>
+      </div>
+      <button class="button button-block btn-success" ng-click="login()">Login</button>
+      <div class="txt-error" ng-if="error">Please enter valid username and password.</div>
   </ion-content>
 </ion-view>
